@@ -12,9 +12,16 @@ class Banners extends StatefulWidget {
 class _BannersState extends State<Banners> {
   final CarouselController _controller = CarouselController();
   List<int> _galleryExample = [1, 2, 3, 4];
+  int indexActive = 0;
   @override
   void initState() {
     super.initState();
+  }
+
+  void _changeActive(idx) {
+    setState(() {
+      indexActive = idx;
+    });
   }
 
   @override
@@ -22,12 +29,10 @@ class _BannersState extends State<Banners> {
     double containerHeight =
         realScreenHeight(context, MediaQuery.of(context).size.height) * 0.45;
     return Container(
-      // color: Colors.amber[100],
       height: containerHeight,
       width: MediaQuery.of(context).size.width,
       margin: EdgeInsets.symmetric(
         horizontal: MediaQuery.of(context).size.width * horizontalPadding,
-        // vertical: 20,
         vertical: MediaQuery.of(context).size.height * (horizontalPadding / 5),
       ),
       child: Column(
@@ -37,8 +42,10 @@ class _BannersState extends State<Banners> {
               carouselController: _controller,
               options: CarouselOptions(
                 aspectRatio: 2 / 1,
-                // height: containerHeight - realScreenHeight(context, MediaQuery.of(context).size.height) * 0.50,
                 viewportFraction: 1.0,
+                onPageChanged: (index, reason) {
+                  _changeActive(index);
+                },
               ),
               items: _galleryExample.asMap().entries.map((entry) {
                 int idx = entry.key;
@@ -58,7 +65,6 @@ class _BannersState extends State<Banners> {
             ),
           ),
           Container(
-            // color: Colors.blue[300],
             padding: EdgeInsets.symmetric(
               vertical:
                   MediaQuery.of(context).size.width * (horizontalPadding / 4),
@@ -70,6 +76,7 @@ class _BannersState extends State<Banners> {
                 return GestureDetector(
                   onTap: () {
                     _controller.animateToPage(idx);
+                    _changeActive(idx);
                   },
                   child: Container(
                     margin: EdgeInsets.only(
@@ -78,7 +85,9 @@ class _BannersState extends State<Banners> {
                     width: MediaQuery.of(context).size.width * 0.025,
                     height: MediaQuery.of(context).size.width * 0.025,
                     decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: indexActive == idx
+                          ? fourthColor
+                          : fourthColor_withOpacity,
                       shape: BoxShape.circle,
                     ),
                   ),
