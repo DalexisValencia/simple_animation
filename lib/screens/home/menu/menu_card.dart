@@ -12,18 +12,29 @@ class OpenContainerMenuCard extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    // return MenuCard(
+    //   deal: deal,
+    //   openContainer: () {},
+    // );
     return OpenContainer(
+      closedShape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(0),
+      ),
       transitionDuration: Duration(
         milliseconds: 500,
       ),
+      openElevation: 0,
       closedBuilder: (_, openContainer) {
-        return MenuCard(
-          deal: deal,
-          openContainer: openContainer,
+        return Container(
+          padding: EdgeInsets.only(
+            bottom: 1.5,
+          ),
+          child: MenuCard(
+            deal: deal,
+            openContainer: openContainer,
+          ),
         );
       },
-      openColor: Colors.red,
-      closedElevation: 0.2,
       openBuilder: (_, closeContainer) {
         return DetailsPage(
           goBack: closeContainer,
@@ -61,6 +72,7 @@ class MenuCard extends StatelessWidget {
           onPressed: openContainer,
           child: SizedBox.expand(
             child: Card(
+              borderOnForeground: false,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(3),
               ),
