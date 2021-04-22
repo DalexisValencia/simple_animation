@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/contansts/constants.dart';
 import 'package:flutter_application_1/models/deals.dart';
 import 'package:animations/animations.dart';
 import 'package:flutter_application_1/screens/details/details.dart';
@@ -47,13 +48,22 @@ class MenuCard extends StatelessWidget {
         margin: EdgeInsets.only(
           right: MediaQuery.of(context).size.width * 0.03,
         ),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: fifthColor,
+            width: 0.4,
+          ),
+          borderRadius: BorderRadius.circular(2.5),
+        ),
         child: MaterialButton(
-          // color: Colors.amber,
           padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
           splashColor: Colors.red,
           onPressed: openContainer,
           child: SizedBox.expand(
             child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(3),
+              ),
               elevation: 0,
               color: Colors.transparent,
               child: Container(

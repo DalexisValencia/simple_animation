@@ -27,13 +27,18 @@ class Menu extends StatelessWidget {
               margin: EdgeInsets.only(
                 left: MediaQuery.of(context).size.width * horizontalPadding,
               ),
+              padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).size.height * 0.01,
+              ),
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: freshDeals.asMap().entries.map((e) {
                   // return MenuCard(
                   //   deal: freshDeals[e.key],
                   // );
-                  return OpenContainerMenuCard(deal: e.value);
+                  return OpenContainerMenuCard(
+                    deal: e.value,
+                  );
                 }).toList(),
               ),
             ),
