@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/contansts/constants.dart';
+import 'package:flutter_application_1/lists/sliders.dart';
 
 class Banners extends StatefulWidget {
   @override
@@ -11,7 +12,6 @@ class Banners extends StatefulWidget {
 
 class _BannersState extends State<Banners> {
   final CarouselController _controller = CarouselController();
-  List<int> _galleryExample = [1, 2, 3, 4];
   int indexActive = 0;
   @override
   void initState() {
@@ -47,8 +47,7 @@ class _BannersState extends State<Banners> {
                   _changeActive(index);
                 },
               ),
-              items: _galleryExample.asMap().entries.map((entry) {
-                int idx = entry.key;
+              items: sliders.asMap().entries.map((entry) {
                 return Container(
                   padding: EdgeInsets.only(
                     top: 5,
@@ -58,7 +57,10 @@ class _BannersState extends State<Banners> {
                     color: Colors.blue,
                   ),
                   child: Center(
-                    child: Text('holiwis $idx'),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(entry.value.text.text),
+                    ),
                   ),
                 );
               }).toList(),
@@ -71,7 +73,7 @@ class _BannersState extends State<Banners> {
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: _galleryExample.asMap().entries.map((entry) {
+              children: sliders.asMap().entries.map((entry) {
                 int idx = entry.key;
                 return GestureDetector(
                   onTap: () {
