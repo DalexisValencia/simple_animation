@@ -24,14 +24,9 @@ class CategoryCard extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width / 8,
             height: MediaQuery.of(context).size.width / 8,
-            // color: Colors.red,
             child: Icon(Icons.filter_sharp),
           ),
           Container(
-            // color: Colors.amber,
-            // padding: EdgeInsets.symmetric(
-            //   horizontal: 3,
-            // ),
             child: FittedBox(
               fit: BoxFit.fitWidth,
               child: Text(
