@@ -30,9 +30,10 @@ class Menu extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: freshDeals.asMap().entries.map((e) {
-                  return MenuCard(
-                    deal: freshDeals[e.key],
-                  );
+                  // return MenuCard(
+                  //   deal: freshDeals[e.key],
+                  // );
+                  return OpenContainerMenuCard(deal: e.value);
                 }).toList(),
               ),
             ),

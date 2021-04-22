@@ -8,6 +8,11 @@ import 'package:flutter_application_1/screens/details/details__name.dart';
 import 'package:flutter_application_1/screens/details/nutrition/nutririon__wrapper.dart';
 
 class DetailsPage extends StatelessWidget {
+  final Function goBack;
+  DetailsPage({
+    Key key,
+    this.goBack,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +25,9 @@ class DetailsPage extends StatelessWidget {
               color: fifthColor,
               child: Stack(
                 children: [
-                  DetailsImage(),
+                  DetailsImage(
+                    goBack: goBack,
+                  ),
                   Positioned(
                     bottom: 0,
                     child: Container(

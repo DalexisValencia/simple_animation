@@ -1,25 +1,57 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/deals.dart';
+import 'package:animations/animations.dart';
+import 'package:flutter_application_1/screens/details/details.dart';
 
-class MenuCard extends StatelessWidget {
+class OpenContainerMenuCard extends StatelessWidget {
   final Deal deal;
-  MenuCard({
+  OpenContainerMenuCard({
     this.deal,
   });
   @override
   Widget build(BuildContext context) {
+    return OpenContainer(
+      transitionDuration: Duration(
+        milliseconds: 500,
+      ),
+      closedBuilder: (_, openContainer) {
+        return MenuCard(
+          deal: deal,
+          openContainer: openContainer,
+        );
+      },
+      openColor: Colors.red,
+      closedElevation: 0.2,
+      openBuilder: (_, closeContainer) {
+        return DetailsPage(
+          goBack: closeContainer,
+        );
+      },
+    );
+  }
+}
+
+class MenuCard extends StatelessWidget {
+  final Deal deal;
+  final Function openContainer;
+  MenuCard({
+    this.deal,
+    this.openContainer,
+  });
+  @override
+  Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 19 / 19,
+      aspectRatio: 19.2 / 19.2,
       child: Container(
         margin: EdgeInsets.only(
           right: MediaQuery.of(context).size.width * 0.03,
         ),
         child: MaterialButton(
-          color: Colors.amber,
+          // color: Colors.amber,
           padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
           splashColor: Colors.red,
-          onPressed: () {},
+          onPressed: openContainer,
           child: SizedBox.expand(
             child: Card(
               elevation: 0,

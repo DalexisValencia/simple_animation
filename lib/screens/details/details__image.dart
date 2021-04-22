@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/contansts/constants.dart';
 
 class DetailsImage extends StatelessWidget {
+  final Function goBack;
+  DetailsImage({
+    Key key,
+    this.goBack,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,7 +20,12 @@ class DetailsImage extends StatelessWidget {
             top: MediaQuery.of(context).padding.top +
                 (MediaQuery.of(context).size.width * horizontalPadding),
             left: (MediaQuery.of(context).size.width * horizontalPadding),
-            child: Icon(Icons.arrow_back_ios),
+            child: GestureDetector(
+              onTap: goBack,
+              child: Icon(
+                Icons.arrow_back_ios,
+              ),
+            ),
           )
         ],
       ),
