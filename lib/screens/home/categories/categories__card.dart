@@ -16,15 +16,24 @@ class CategoryCard extends StatelessWidget {
         horizontal: (MediaQuery.of(context).size.width * horizontalPadding) / 4,
         vertical: (MediaQuery.of(context).size.width * horizontalPadding) / 4,
       ),
-      width: MediaQuery.of(context).size.width / 5,
-      height: MediaQuery.of(context).size.width / 5,
+      // color: Colors.red,
+      width: MediaQuery.of(context).size.width / 5.4,
+      height: MediaQuery.of(context).size.width / 5.4,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             width: MediaQuery.of(context).size.width / 8,
             height: MediaQuery.of(context).size.width / 8,
-            child: Icon(Icons.filter_sharp),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: ExactAssetImage(
+                  category.image,
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+            // child: Icon(Icons.filter_sharp),
           ),
           Container(
             child: FittedBox(

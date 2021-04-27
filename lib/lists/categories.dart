@@ -2,27 +2,27 @@ import 'package:flutter_application_1/models/categories.dart';
 
 List<CategorieModel> categories = [
   CategorieModel(
-    name: 'Meal',
-    image: '',
+    name: 'Meat',
+    image: 'assets/images/meat-category.png',
   ),
   CategorieModel(
     name: 'Fruits',
-    image: '',
+    image: 'assets/images/fruit-category.png',
   ),
   CategorieModel(
     name: 'Vegetables',
-    image: '',
+    image: 'assets/images/vegan-category.png',
   ),
   CategorieModel(
     name: 'SeaFood',
-    image: '',
+    image: 'assets/images/sea-category.png',
   ),
   CategorieModel(
     name: 'Chinese',
-    image: '',
+    image: 'assets/images/meat-category.png',
   ),
   CategorieModel(
     name: 'Mexican',
-    image: '',
+    image: 'assets/images/fruit-category.png',
   ),
 ];
