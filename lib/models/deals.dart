@@ -1,11 +1,13 @@
 class Deal {
   final String name;
+  final String thumbnail;
   final String image;
   final String price;
   final String description;
   final List<Nutrition> nutrition;
   Deal({
     this.name,
+    this.thumbnail,
     this.image,
     this.price,
     this.description,

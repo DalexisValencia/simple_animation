@@ -3,6 +3,7 @@ import 'package:flutter_application_1/models/deals.dart';
 List<Deal> freshDeals = [
   Deal(
     name: 'Salmon Grilled',
+    thumbnail: '',
     image: '',
     price: '20.00',
     description: '',
@@ -15,6 +16,7 @@ List<Deal> freshDeals = [
   ),
   Deal(
     name: 'Farms Spinach',
+    thumbnail: '',
     image: '',
     price: '5.00',
     description: '',
@@ -27,6 +29,7 @@ List<Deal> freshDeals = [
   ),
   Deal(
     name: 'Chorizo jambalaya',
+    thumbnail: '',
     image: '',
     price: '35.00',
     description: '',
@@ -41,6 +44,7 @@ List<Deal> freshDeals = [
   ),
   Deal(
     name: 'Spicy root',
+    thumbnail: '',
     image: '',
     price: '35.00',
     description: '',
