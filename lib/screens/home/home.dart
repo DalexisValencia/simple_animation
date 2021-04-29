@@ -18,7 +18,9 @@ class HomeApp extends StatelessWidget {
           ),
           child: Text(
             'Hi, Welcome app',
-            style: Theme.of(context).textTheme.bodyText1,
+            style: Theme.of(context).textTheme.bodyText1.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
           ),
         ),
         toolbarHeight: customToolbarheight,
@@ -79,6 +81,7 @@ class HomeApp extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         backgroundColor: primaryColor,
+        elevation: 0,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_filled),

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/contansts/constants.dart';
 import 'package:flutter_application_1/screens/home/home.dart';
 import 'package:flutter_application_1/screens/splashScreen.dart';
 
@@ -12,14 +13,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Simple Motion App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: secondaryColor,
+        fontFamily: 'SourceSansPro',
+        // primarySwatch: Colors.amber,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MainPage(),
-      // home: HomeApp(),
     );
   }
 }
@@ -38,7 +40,6 @@ class _MainPageState extends State<MainPage> {
       setState(() {
         loading = false;
       });
-      print('ajshd');
     });
   }
 
