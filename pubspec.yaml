@@ -52,6 +52,8 @@ flutter:
     - assets/images/fruit-category.png
     - assets/images/vegan-category.png
     - assets/images/sea-category.png
+    - assets/images/chinese-food.png
+    - assets/images/mexican-food.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

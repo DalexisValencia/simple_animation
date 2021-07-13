@@ -19,10 +19,10 @@ List<CategorieModel> categories = [
   ),
   CategorieModel(
     name: 'Chinese',
-    image: 'assets/images/meat-category.png',
+    image: 'assets/images/chinese-food.png',
   ),
   CategorieModel(
     name: 'Mexican',
-    image: 'assets/images/fruit-category.png',
+    image: 'assets/images/mexican-food.png',
   ),
 ];

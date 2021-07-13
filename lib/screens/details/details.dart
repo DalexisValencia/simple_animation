@@ -22,7 +22,7 @@ class DetailsPage extends StatelessWidget {
             child: Container(
               constraints: BoxConstraints.expand(),
               height: MediaQuery.of(context).size.height - 100,
-              color: fifthColor,
+              color: Colors.blue[400].withOpacity(0.7),
               child: Stack(
                 children: [
                   DetailsImage(
